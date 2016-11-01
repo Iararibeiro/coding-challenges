@@ -31,22 +31,13 @@ function solution(A) {
 /*
  * tests
  */
-var results = {
-	total: 0,
-    bad: 0
-};
 
 function test(functionToTest, args, expected) {
 	var result = functionToTest.apply(this, args);
     if (result !== expected) {
-        results.bad++;
         console.log(args.toString(2));
         console.log("Expected " + expected + ", but was " + result);
     }
-}
-
-function showResults() {
-
 }
 
 test(solution, [9], 2);
