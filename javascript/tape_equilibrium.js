@@ -1,5 +1,5 @@
 /* Result for lesson:
- * https://codility.com/programmers/lessons/2-arrays/cyclic_rotation/
+ * https://codility.com/demo/take-sample-test/tape_equilibrium
  */
 
 function solution(A) {
