@@ -4,7 +4,7 @@
 
 function solution(A) {
     // write your code in JavaScript (Node.js 6.4.0)
-    A = A.sort();
+        A = A.sort();
     var result = 1;
     
     for(var i = 0; i < (A.length-1); i++){
@@ -12,6 +12,11 @@ function solution(A) {
             result = 0;
         }
     }
+    
+    if(A.length <= 1){
+        result = 0;
+    }
+    
     return result;
 }
 /*
