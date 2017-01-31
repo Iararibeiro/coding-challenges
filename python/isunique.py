@@ -1,9 +1,9 @@
 def solution(word):
-	occurency = [False] * 26
+	occurency = [False] * (127-32)
 	result = True
 
 	for letter in word:
-		position= ord(letter) - ord('a')
+		position= ord(letter) - 32
 		if occurency[position] == False:
 			occurency[position] = True
 		else:
@@ -12,5 +12,6 @@ def solution(word):
 	return result
 
 print solution("abca")
-print solution("abc")
+print solution("116")
+print solution("146")
 
