@@ -1,4 +1,4 @@
-def isPalindrome(self, x: int) -> bool:
+def isPalindrome(x: int) -> bool:
     if x < 0: return False
 
     #convert to string
