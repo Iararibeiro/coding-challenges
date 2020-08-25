@@ -3,26 +3,18 @@ from SingleLinkedList import SingleListNode
 def addTwoNumbers(l1, l2):
     return sumLists(l1, l2, 0)
 
-def sumLists(l1, l2, carryOn):
-    if not l1 and not l2 and carryOn == 0: return None
+def sumLists(l1, l2, c):
+    val = l1.val + l2.val + c
+    c = val // 10
+    ret = SingleListNode(val % 10 )
 
-    value = carryOn
-    result = SingleListNode(0)
-
-    if l1.val > 0:
-        value += l1.val
-    if l2.val > 0:
-        value += l2.val
-
-    result.val = value % 10
-
-    if l1.val > 0 or l2.val > 0:
-        if value >= 10:
-            nextValue = sumLists(l1.next, l2.next, 1)
-            result.next = nextValue
-        else:
-            nextValue = sumLists(l1.next, l2.next, 0)
-            result.next = nextValue
+    if (l1.next != None or l2.next != None or c != 0):
+        if l1.next == None:
+            l1.next = SingleListNode(0)
+        if l2.next == None:
+            l2.next = SingleListNode(0)
+        ret.next = sumLists(l1.next,l2.next,c)
+    return ret
 
     return result
 
