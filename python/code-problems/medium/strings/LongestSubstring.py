@@ -39,8 +39,6 @@ def OptLengthOfLongestSubstring(s: str) -> int:
         currentWindow = end - start
         windowSize = max(windowSize, currentWindow)
         dic[char] = i
-
-    print(windowSize)
     return windowSize
 
 #lengthOfLongestSubstring("abcabcbb")
