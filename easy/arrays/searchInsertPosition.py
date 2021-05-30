@@ -8,18 +8,18 @@ def searchInsert(nums, target):
 
     #check if the target is bigger then the middle
     if (nums[halfPoint] > target) :
-        return searchInsert(nums[0:halfPoint], target)
+        return searchInsert(nums[0:halfPoint], target) 
     else :
-        return searchInsert(nums[halfPoint:], target)    
+        return searchInsert(nums[halfPoint:], target) + halfPoint
 
 
 #Input: nums = [1,3,5,6], target = 5, Output: 2
-#print(searchInsert([1,3,5,6], 5))
+print(searchInsert([1,3,5,6], 5))
 #Input: nums = [1,3,5,6], target = 2, Output: 1
-#print(searchInsert([1,3,5,6], 2))
+print(searchInsert([1,3,5,6], 2))
 #Input: nums = [1,3,5,6], target = 7, Output: 4
 print(searchInsert([1,3,5,6], 7))
 #Input: nums = [1,3,5,6], target = 0, Output: 0
-#searchInsert([1,3,5,6], 0)
+print(searchInsert([1,3,5,6], 0))
 #Input: nums = [1], target = 0, Output: 0
-#searchInsert([1], 0)
+print(searchInsert([1], 0))
