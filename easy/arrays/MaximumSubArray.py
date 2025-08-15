@@ -1,25 +1,20 @@
-def solution(nums):
-    result = float('-inf')
+"""
+Given an integer array nums, find the subarray with the largest sum, and return its sum.
+"""
 
-    for i in range(0, len(nums)):
-        current_sum = 0
-        for j in range(i, len(nums)):
-            current_sum += nums[j]
-            result = max(result, current_sum)
+from typing import List
 
-    return result
 
-def solutionDP(nums):
-    currentSubArray = nums[0]
-    maxSubArray = nums[0]
+def maxSubArray(nums: List[int]) -> int:
+    current_max = nums[0]
+    global_max = nums[0]
 
     for i in range(1, len(nums)):
-        currentSubArray = max(nums[i], currentSubArray + nums[i])
-        maxSubArray = max(maxSubArray, currentSubArray)
+        current_max = max(nums[i], (current_max + nums[i]))
+        global_max = max(current_max, global_max)
 
-    return maxSubArray
+    return global_max
 
-print(solutionDP([-2,-1,-3,4,-1,2,1,-5,4]))
-print(solutionDP([1]))
-print(solutionDP([5,4,-1,7,8]))
-print(solutionDP([-2,1]))
+assert maxSubArray([-2,1,-3,4,-1,2,1,-5,4]) == 6
+assert maxSubArray([1]) == 1
+assert maxSubArray([5,4,-1,7,8]) == 23
